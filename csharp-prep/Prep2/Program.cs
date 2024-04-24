@@ -59,9 +59,11 @@ class Program
             letter = "F";
         }
 
+        Console.WriteLine($"Grade: {letter}");
+        
         if (Grade >= 70)
         {
-            Console.WriteLine($"Congrats you passed with a grade of {letter}. ");
+            Console.WriteLine($"Congrats you passed!");
         }
         else
         {
