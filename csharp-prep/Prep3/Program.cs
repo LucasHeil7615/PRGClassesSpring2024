@@ -9,9 +9,14 @@ class Program
 
         Console.WriteLine("Welcome to the guess a number game! ");
 
-        Console.WriteLine("What is the magic number? ");
-        int magicNum = int.Parse(Console.ReadLine());
-        Console.WriteLine("Please guess a number from 1 - 100 intergerz only plz.");
+        Random randomGenerator = new Random();
+        int magicNum = randomGenerator.Next(1, 100);
+        Console.WriteLine("Please guess a number from 1 - 100 ints only plz.");
+
+        bool run = true;
+        while (run){
+
+        Console.Write("Guess: ");
         int guessNum = int.Parse(Console.ReadLine());
 
         if (guessNum > magicNum)
@@ -22,15 +27,13 @@ class Program
         {
             Console.WriteLine("Guess Higher");
         }
-        else if (guessNum < magicNum)
+        else if (guessNum == magicNum)
         {
             Console.WriteLine("Congrats you Guessed it! ");
+            run = false;
         }
-        else
-        {
-            Console.WriteLine("Error please reload program and enter an int");
         }
-        
+
 
 
         
