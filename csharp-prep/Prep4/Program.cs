@@ -1,9 +1,15 @@
 using System;
-
+using System.Collections.Generic;
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Prep4 World!");
+        List<string> words = new List<string>();
+
+        words.Add("Pizza");
+        words.Add("mtdew");
+
+        Console.WriteLine($"{words}");
+
     }
 }
