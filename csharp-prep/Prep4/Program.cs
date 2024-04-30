@@ -19,7 +19,7 @@ class Program
         int entry = 1;
         int max = int.MaxValue;
         int min = int.MinValue;
-        int count = numbers.Count;
+        int count = 0;
         //while loop to ask user for an int until they press 0
         while (entry != 0){
         Console.Write("Enter an int: ");
@@ -29,7 +29,8 @@ class Program
             numbers.Add(entry);
         }
         // adding up numbers entered
-        total = total + entry;
+            total += entry;
+            count++;
         }
         //printing total
         Console.WriteLine($"Sum of ints: {total}\n");
