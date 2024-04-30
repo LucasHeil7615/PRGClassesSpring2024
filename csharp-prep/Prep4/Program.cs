@@ -18,7 +18,7 @@ class Program
         int total = 0;
         int entry = 1;
         int max = 1;
-        int min = 0;
+        int min = 1000000000;
         int count = 0;
         //while loop to ask user for an int until they press 0
         while (entry != 0){
