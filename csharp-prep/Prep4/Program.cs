@@ -17,8 +17,8 @@ class Program
         //starting our total, entry, Min and Max values 
         int total = 0;
         int entry = 1;
-        int max = int.MaxValue;
-        int min = int.MinValue;
+        int max = 1;
+        int min = 0;
         int count = 0;
         //while loop to ask user for an int until they press 0
         while (entry != 0){
@@ -31,10 +31,6 @@ class Program
         // adding up numbers entered
             total += entry;
             count++;
-        }
-        //printing total
-        Console.WriteLine($"Sum of ints: {total}\n");
-
         foreach (int num in numbers){
             if (num > max)
             {
@@ -43,9 +39,14 @@ class Program
 
             if (num < min)
             {
-                min = num;
+                min = num; //Updating the minimum number
             }
         }
+        }
+        //printing total
+        Console.WriteLine($"Sum of ints: {total}\n");
+
+
         float average = total / count; //getting the average of the list.
         Console.WriteLine($"Greatest number: {max} Smallest number: {min} Average: {average} ");
 
