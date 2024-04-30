@@ -1,6 +1,8 @@
 
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
+using System.Numerics;
 class Program
 {
     static void Main(string[] args)
@@ -15,13 +17,12 @@ class Program
         while (entry != 0){
         Console.Write("Enter an int: ");
         entry = int.Parse(Console.ReadLine());
-        
         if (entry != 0)
         {
             numbers.Add(entry);
         }
         }
-
+    
     
         Console.WriteLine("list of ints: ");
         foreach (int number in numbers)
