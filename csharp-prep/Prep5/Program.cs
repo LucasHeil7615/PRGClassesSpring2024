@@ -25,7 +25,7 @@ class Program
 
     static int GetInt()
     {
-        Console.WriteLine("Please enter your favorite number: ");
+        Console.Write("Please enter your favorite number: ");
         int favNum = int.Parse(Console.ReadLine());
         return favNum;
     }
