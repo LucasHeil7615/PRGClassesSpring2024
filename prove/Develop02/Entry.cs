@@ -18,6 +18,6 @@ class Entry
     }
     
     public void Display() {
-        Console.WriteLine($"{prompt} [{date}] \n {content}\n ");
+        Console.WriteLine($"{prompt} [{date}]\n{content}\n ");
     }
 }
