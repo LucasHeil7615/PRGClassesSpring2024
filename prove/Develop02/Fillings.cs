@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.ConstrainedExecution;
 
 class Fillings 
 {
@@ -113,9 +114,12 @@ class Fillings
 
     }
 
-     public DateTime GetCurrentDateTime()
+    public string GetDateTime()
     {
-        return DateTime.Now;
+        DateTime theCurrentTime = DateTime.Now;
+        string dateTimeText = theCurrentTime.ToString("g");
+
+        return dateTimeText;
     }
 
 }
