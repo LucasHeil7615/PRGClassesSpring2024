@@ -46,19 +46,15 @@ class Journal
         //Prompt the user for a filename and then save the current journal (the complete list of entries) to that file location.
         Console.Write("Please enter the journal file you wish to save these entries into:");
         string filename = Console.ReadLine();
-      
-
         using(StreamWriter outputFile = new StreamWriter(filename, true))
         {        
             foreach (Entry entry in entries)
             {   
-                outputFile.WriteLine($"{entry.Display()}");
+                outputFile.WriteLine(entry.Display());
             }
 
         }
-
         Console.WriteLine($"Your entries have been saved in {filename}. ");
-        
     }
 
     public void Load()
