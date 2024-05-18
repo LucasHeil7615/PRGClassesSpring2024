@@ -48,17 +48,11 @@ class Journal
         string filename = Console.ReadLine();
       
 
-        using(StreamWriter outputFile = new StreamWriter(filename))
-        {
-            outputFile.WriteLine("Welcome to JounalAppLog. \n You can save all of your previous entries here. ");
-            Console.WriteLine("Please enter a title for this log");
-            string title = Console.ReadLine();
-            outputFile.WriteLine($"{title}:\n");
-        
-            
+        using(StreamWriter outputFile = new StreamWriter(filename, true))
+        {        
             foreach (Entry entry in entries)
             {   
-                outputFile.WriteLine($"{entry}"); 
+                outputFile.WriteLine($"{entry.Display()}");
             }
 
         }

@@ -1,0 +1,4 @@
+Welcome to JounalAppLog. 
+You can save all of your previous entries here. 
+music:
+

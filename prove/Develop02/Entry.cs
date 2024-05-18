@@ -17,7 +17,9 @@ class Entry
         this.content = content;
     }
     
-    public void Display() {
+    public string Display() {
+        string display = $"{prompt} [{date}]\n{content}\n ";
         Console.WriteLine($"{prompt} [{date}]\n{content}\n ");
+        return display;
     }
 }
