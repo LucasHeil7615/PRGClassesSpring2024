@@ -16,7 +16,7 @@ class Entry
     }
     
     public string Display() {
-        string display = $"{Prompt} [{Date}]\n {Content}\n ";
+        string display = $"{Prompt}|[{Date}]|\n{Content}|\n ";
         Console.WriteLine(display);
         return display;
     }

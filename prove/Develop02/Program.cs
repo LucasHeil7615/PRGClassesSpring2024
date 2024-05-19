@@ -22,7 +22,7 @@ class Program
             Console.WriteLine("2 Save");
             Console.WriteLine("3 Display");
             Console.WriteLine("4 Load");
-            Console.WriteLine("5 Inpiration");
+            Console.WriteLine("5 Encouragment");
             Console.WriteLine("0 Quit");
             Console.Write("Please enter your choice: ");
             choice = int.Parse(Console.ReadLine());
