@@ -50,7 +50,7 @@ class Journal
         {        
             foreach (Entry entry in entries)
             {   
-                outputFile.WriteLine(entry.Display());
+                outputFile.WriteLine($"{entry.Date}|{entry.Prompt}|{entry.Content}");
             }
 
         }
@@ -60,6 +60,44 @@ class Journal
     public void Load()
     {
         //Prompt the user for a filename and then load the journal (a complete list of entries) from that file. This should replace any entries currently stored the journal.
+        Console.WriteLine("Please enter the filename you would like to enter: ");
+        string filename = Console.ReadLine();
+
+        if (!File.Exists(filename))
+        {
+            Console.WriteLine("File not Found.");
+            return;
+        }
+
+        //Clearing existing entries 
+        entries.Clear();
+
+        // read all lines from the file 
+        string[] lines = File.ReadAllLines(filename);
+
+        foreach(string line in lines)
+        {   
+            //split each line by the seperator
+            string [] parts = line.Split("|");
+
+            if (parts.Length == 3)
+            {   
+                string date = parts[0];
+                string prompt = parts[1];
+                string content = parts[2];
+                //create a new Entry object and add it to the entries list
+                Entry entry = new Entry(date, prompt, content);
+                entries.Add(entry);
+            }
+            else
+            {
+                Console.WriteLine("Invalid entry format in file");
+            }
+
+        }
+
+        Console.WriteLine($"Journal entries have been loaded from {filename}");
+
     }
 
     public void Inspiration()

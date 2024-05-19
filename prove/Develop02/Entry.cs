@@ -5,20 +5,18 @@ using System.Security.Cryptography.X509Certificates;
 class Entry
 {
 
-    Fillings fillings = new Fillings();
-
-    string date;
-    string prompt;
-    string content;
+    public string Date {get; private set; }
+    public string Prompt {get; private set;}
+    public string Content {get; private set;}
     public Entry(string date, string prompt, string content)
     {
-        this.date = date;
-        this.prompt = prompt;
-        this.content = content;
+        Date = date;
+        Prompt = prompt;
+        Content = content;
     }
     
     public string Display() {
-        string display = $"{prompt} [{date}]\n{content}\n ";
+        string display = $"{Prompt} [{Date}]\n {Content}\n ";
         Console.WriteLine(display);
         return display;
     }
