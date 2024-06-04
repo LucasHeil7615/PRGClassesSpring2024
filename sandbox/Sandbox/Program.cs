@@ -32,25 +32,26 @@ class Program
         // Console.WriteLine("Maximum number: " + max);
         // Console.WriteLine("Minimum number: " + min);
 
-        DateTime theCurrentTime = DateTime.Now;
+        // DateTime theCurrentTime = DateTime.Now;
 
-        // To get the short date string
-        string dateText = theCurrentTime.ToShortDateString();
+        // // To get the short date string
+        // string dateText = theCurrentTime.ToShortDateString();
 
-        // To get the short time string
-        string timeText = theCurrentTime.ToShortTimeString();
+        // // To get the short time string
+        // string timeText = theCurrentTime.ToShortTimeString();
 
-        // If you want both the short date and short time in one string
-        string dateTimeText = theCurrentTime.ToString("g");
+        // // If you want both the short date and short time in one string
+        // string dateTimeText = theCurrentTime.ToString("g");
 
-        // Or using custom format for more control (e.g., "MM/dd/yyyy hh:mm tt")
-        string customDateTimeText = theCurrentTime.ToString("MM/dd/yyyy hh:mm tt");
+        // // Or using custom format for more control (e.g., "MM/dd/yyyy hh:mm tt")
+        // string customDateTimeText = theCurrentTime.ToString("MM/dd/yyyy hh:mm tt");
 
-        // Printing the results
-        Console.WriteLine("Short Date: " + dateText);
-        Console.WriteLine("Short Time: " + timeText);
-        Console.WriteLine("Short Date and Time: " + dateTimeText);
-        Console.WriteLine("Custom Date and Time: " + customDateTimeText);
+        // // Printing the results
+        // Console.WriteLine("Short Date: " + dateText);
+        // Console.WriteLine("Short Time: " + timeText);
+        // Console.WriteLine("Short Date and Time: " + dateTimeText);
+        // Console.WriteLine("Custom Date and Time: " + customDateTimeText);
+
 
     }
 }
