@@ -3,13 +3,8 @@ using System;
 class Scripture
 {
     public List<Word> newlistwords = new List<Word>();
-
-   // public List<Word> hiddenlistword;
     
-    public Scripture()
-    {
-        
-    }
+    
     public void Splitter()
     {
         string fulltext = "happy dance";

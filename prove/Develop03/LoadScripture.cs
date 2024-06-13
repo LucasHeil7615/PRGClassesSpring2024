@@ -18,7 +18,8 @@ class LoadScripture
     {
         //Prompt the user for a filename and then load the refrence with it's accompaning scripture from that file. This should replace any entries currently stored the memorizer.
         bool fileloaded = false;
-
+        //Clearing existing entries 
+        Console.Clear();
         while(!fileloaded)
         {
         Console.Write("Please enter the filename you would like to enter: ");
@@ -31,8 +32,6 @@ class LoadScripture
         }
         Console.WriteLine($"{filename} found");
         
-        //Clearing existing entries 
-        //memorizer.Clear();
         Console.Write("Please enter the refrence of the scripture that you want to load: ");
         string inputRefrence = Console.ReadLine();
         // read all lines from the file 
