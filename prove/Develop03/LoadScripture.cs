@@ -1,22 +1,23 @@
 using System;
-using System.Reflection.Metadata;
 using System.IO;
 class LoadScripture
 {
 
     private string fulltext;
-    private string refrence;
+    private string reference;
 
-    
+    public bool isLoaded {get; private set;}
     public void Run()
     {
         Load();
-        GetRefrence();
+        GetReference();
+        Console.Write($"{reference}: ");
         Getfulltext();
+        Console.WriteLine($"{fulltext}\n");
     }
     private void Load()
     {
-        //Prompt the user for a filename and then load the refrence with it's accompaning scripture from that file. This should replace any entries currently stored the memorizer.
+        //Prompt the user for a filename and then load the reference with it's accompaning scripture from that file. This should replace any entries currently stored the memorizer.
         bool fileloaded = false;
         //Clearing existing entries 
         Console.Clear();
@@ -32,40 +33,39 @@ class LoadScripture
         }
         Console.WriteLine($"{filename} found");
         
-        Console.Write("Please enter the refrence of the scripture that you want to load: ");
-        string inputRefrence = Console.ReadLine();
+        Console.Write("Please enter the reference of the scripture that you want to load: ");
+        string inputreference = Console.ReadLine();
         // read all lines from the file 
         string[] lines = File.ReadAllLines(filename);
 
         foreach (string line in lines )
         { 
             string [] parts = line.Split("|");
-            if(parts.Length >=2 && parts[0].Equals(inputRefrence, StringComparison.OrdinalIgnoreCase))
+            if(parts.Length >=2 && parts[0].Equals(inputreference, StringComparison.OrdinalIgnoreCase))
             {
-            refrence = parts[0];
+            reference = parts[0];
             fulltext = parts[1];
-            Console.WriteLine($"{refrence} has loaded from {filename}");
+            Console.WriteLine($"{reference} has loaded from {filename}");
             fileloaded = true;
+            isLoaded = true;
             break;
             }
         }
            if (!fileloaded)
                {
-                    Console.WriteLine("There doesn't seem to be a refrence here that matches your's\nPlease try again.");
+                    Console.WriteLine("There doesn't seem to be a reference here that matches your's\nPlease try again.");
                     continue;
                }
-        }
+        }   
     }
 
-    public string GetRefrence()
+    public string GetReference()
     {
-        Console.Write($"{refrence}  ");
-        return refrence;
+        return reference;
     }
 
     public string Getfulltext()
     {
-        Console.WriteLine($"{fulltext}\n");
         return fulltext;
     }   
 

@@ -1,5 +1,4 @@
 using System;
-using System.Xml.Serialization;
 
 class Program
 {
@@ -8,8 +7,9 @@ class Program
         int choice = 10;
         Fillings fillings = new Fillings();
         GetScripture getScripture = new GetScripture(); 
-        Scripture scripture = new Scripture();
         LoadScripture loadScripture = new LoadScripture();
+
+        
 
         Console.WriteLine("Welcome to the Scripture memorizer.\n");
            
@@ -37,7 +37,20 @@ class Program
                 break;
 
                 case 3 :
-                //memorizer.Run();
+                
+                if (loadScripture.isLoaded)
+                {
+                string reference = loadScripture.GetReference();
+                string fulltext = loadScripture.Getfulltext();
+                loadScripture.GetReference();
+                Scripture scripture = new Scripture(fulltext, reference);
+                scripture.Run();
+                }
+                else
+                {
+                    Console.WriteLine("You have either not saved a scripture aka option1 or have not loaded a spricture aka option2 please refer to the description option 4.\n");
+
+                }
                 break;
 
                 case 4 :

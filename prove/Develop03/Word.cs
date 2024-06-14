@@ -1,7 +1,9 @@
 using System;
-using System.Net;
+
 class Word
 {
+
+    private bool hidden = false;
     private string word;
 
     public Word(string word)
@@ -11,14 +13,19 @@ class Word
 
     public string GetWord()
     {
-        return word;
+        if (hidden)
+        {
+            return new string('_', count: word.Length);
+        }
+        else 
+        {
+            return word;
+        }
     }
     
-    // //private string Hide()
-    // {
-    //     //prints random words as the words as dashes
-    //     //counts the word length and sets each value to 0;
-    //     //return the hidden words
-    // }
+    public void Hide()
+    {
+        this.hidden = true;
+    }
 
 }

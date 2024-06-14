@@ -1,24 +1,24 @@
 using System;
-using System.Xml.Linq;
 class GetScripture
 {
 
-    private string Refrence;
+    private string Reference;
     private string fulltext;
 
     public void Run()
     {   
-        GetRefrence();
+        GetReference();
+        
         Getfulltext();
         Save();
     }
 
-    private string GetRefrence()
+    private string GetReference()
     {
-        Console.Write("\nEnter the refrence for your scripture: ");
-        this.Refrence = Console.ReadLine();
+        Console.Write("\nEnter the reference for your scripture: ");
+        this.Reference = Console.ReadLine();
 
-        return Refrence;
+        return Reference;
     }
 
     private string Getfulltext()
@@ -30,14 +30,14 @@ class GetScripture
 
     private void Save()
     {
-        //Prompt the user for a fulltext and then save the current fulltext and refrence (the complete set scriptures) to the file location.
+        //Prompt the user for a fulltext and then save the current fulltext and reference (the complete set scriptures) to the file location.
         Console.Write("Please enter the  file you wish to save this scripture into:");
         string filename = Console.ReadLine();
         using(StreamWriter outputFile = new StreamWriter(filename, true))
         {       
-             outputFile.WriteLine($"{Refrence}|{fulltext}");
+             outputFile.WriteLine($"{Reference}|{fulltext}");
         }
-        Console.WriteLine($"{Refrence} has been saved in {filename}. \n");
+        Console.WriteLine($"{Reference} has been saved in {filename}. \n");
     }
 
 }
