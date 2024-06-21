@@ -34,25 +34,23 @@ protected void Duration(Action filler,int seconds)
 protected void Wait(int seconds)
 {
     //waiting animation
+    Console.WriteLine("Please wait ");
     for (int i=0; i < seconds; i++)
     {
-    Console.Write(".");
-    Thread.Sleep(125);
-    Console.Write(".");
-    Thread.Sleep(125);
-    Console.Write(".");
-    Thread.Sleep(125);
-    Console.Write(".");
-    Thread.Sleep(125);
+    Console.Write("|");
+    Thread.Sleep(250);
     Console.Write("\b \b");
-    Thread.Sleep(125);
+    Console.Write("/");
+    Thread.Sleep(250);
     Console.Write("\b \b");
-    Thread.Sleep(125);
+    Console.Write("-");
+    Thread.Sleep(250);
     Console.Write("\b \b");
-    Thread.Sleep(125);
+    Console.Write("\\");
+    Thread.Sleep(250);
     Console.Write("\b \b");
-    Thread.Sleep(125);
     }
+    Console.WriteLine(" ");
 }
 
 protected void End(string activity, int seconds)
