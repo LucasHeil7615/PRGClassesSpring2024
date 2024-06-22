@@ -5,14 +5,15 @@ class Program
     static void Main(string[] args)
     {
         int choice = 7;
-        Console.WriteLine("Welcome to the Mindfullness app! :)\n");
+        Console.WriteLine("\nWelcome to the Mindfullness app! :)\n");
 
         while(choice != 0)
         {
-        Console.WriteLine("Please selcet an activty to do: ");
+        Console.WriteLine("Please select an activty to do: ");
         Console.WriteLine("1 Breathing");
-        Console.WriteLine("2 Relfection");
+        Console.WriteLine("2 Reflection");
         Console.WriteLine("3 Listing");
+        Console.WriteLine("4 Gratitude");
         Console.WriteLine("0 Quit");
         Console.Write("Choice: ");
         choice = int.Parse(Console.ReadLine());
@@ -32,6 +33,11 @@ class Program
             case 3:
             List list = new List();
             list.Run();
+            break;
+
+            case 4:
+            Grateful grateful = new Grateful();
+            grateful.Run();
             break;
 
             case 0:

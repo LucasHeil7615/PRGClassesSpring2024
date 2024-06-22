@@ -1,20 +1,19 @@
 using System;
 using System.Reflection;
 
-class Activty
+class Activity
 {
-protected string Start(String activity, string description)
+protected void Start(string activity, string description)
 {
     //stock start message and description
-    string startmessage = $"welcome to the {activity}\n\n{description}"; 
+    Console.WriteLine($"welcome to the {activity}\n\n{description}"); 
     Wait(2);
-    return startmessage;
 }
 
 protected int Seconds() 
 {
     //ask the user for the time
-    Console.WriteLine("How many seconds would you like to do the activty for?");
+    Console.WriteLine("How many seconds would you like to do the activity for?");
     Console.Write("Number of Seconds: ");
     int seconds = int.Parse(Console.ReadLine());
     return seconds;
@@ -34,7 +33,7 @@ protected void Duration(Action filler,int seconds)
 protected void Wait(int seconds)
 {
     //waiting animation
-    Console.WriteLine("Please wait ");
+    Console.Write("Loading ");
     for (int i=0; i < seconds; i++)
     {
     Console.Write("|");
@@ -50,8 +49,31 @@ protected void Wait(int seconds)
     Thread.Sleep(250);
     Console.Write("\b \b");
     }
-    Console.WriteLine(" ");
+    //removes loading
+    string back = new string('\b',8);
+    Console.WriteLine($"{back}        {back}");
 }
+
+protected void CountdownTen()
+{
+    Console.Write("Countdown: ");
+    for (int i = 10; i > 0; i--)
+    {
+        Console.Write(i);
+        Thread.Sleep(1000);
+        if (i>9)
+        {
+        string back = new string('\b',2);
+        Console.Write($"{back}  {back}");
+        }
+        else
+        {
+        string back = new string('\b',1);
+        Console.Write($"{back} {back}");
+        }
+    }
+}
+
 
 protected void End(string activity, int seconds)
 {
@@ -60,4 +82,11 @@ protected void End(string activity, int seconds)
     Wait(5);
 }
 
+protected void Random(List<string> list)
+{
+    Random random = new Random();
+        int index = random.Next(list.Count);
+        string randomPrompt = list[index];
+        Console.WriteLine($"{randomPrompt}");
+}
 }

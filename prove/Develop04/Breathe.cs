@@ -1,25 +1,25 @@
 using System;
 
-class Breathe : Activty
+class Breathe : Activity
 {
-    private string activty = "Breathing activity";
-    private string descripion ="In this activty you will be practicing the art of clam by breathing in and out deeply. Clear your mind and rest."; 
+    private string activity = "Breathing activity";
+    private string description ="In this activity you will be practicing the art of calm by breathing in and out deeply. Clear your mind and rest."; 
     public void Run()
     {
-        Start(activty, descripion);
+        Start(activity, description);
         int seconds = Seconds();
         Duration(Breathing, seconds);
-        End(activty, seconds);
+        End(activity, seconds);
     }
     // Breathing exercise
     private void Breathin()
     {
-            Console.WriteLine("Breathe in ... {}");
+            Console.WriteLine("Breathe in");
             Wait(5);
     }
     private void Breathout()
     {
-            Console.WriteLine("Breathe out ... {}");
+            Console.WriteLine("Breathe out");
             Wait(5);
     }
     private void Breathing()
