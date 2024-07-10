@@ -1,0 +1,5 @@
+  public override string ToString()
+    {
+        string frequencyString = frequency == 1 ? "Daily" : frequency == 2 ? "Weekly" : frequency == 3 ? "Monthly" : "Yearly";
+        return $"[{CheckBox()}]| Goal: {goalname} |Description: {description}|Points: {pointValue}| Completed: {timescompleted}| Duration: {duration}| Frequency:  {frequencyString}";
+    }
