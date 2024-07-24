@@ -30,7 +30,7 @@ class Program
         // Store videos in a list
         List<Video> videos = new List<Video> { video1, video2, video3, video4 };
 
-        // Iterate through the list of videos and display information
+        // displays videos 
         foreach (Video video in videos)
         {
             Console.WriteLine(video);
